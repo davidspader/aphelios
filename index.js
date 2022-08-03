@@ -1,12 +1,26 @@
 aphelios = {
-    initial_ammo: 50,
     weapons: [ 
-        {name: 'Calibrum', ammo: initial_ammo}, 
-        {name: 'Severum', ammo: initial_ammo},
-        {name: 'Gravitum', ammo: initial_ammo},
-        {name: 'Infernum', ammo: initial_ammo},
-        {name: 'Crescendum', ammo: initial_ammo}
-    ]
+        ['Calibrum'], 
+        ['Severum'], 
+        ['Gravitum'], 
+        ['Infernum'], 
+        ['Crescendum'], 
+    ],
+
+    getActiveWeapons(){
+        return [this.weapons[0], this.weapons[1]];
+    },
+
+    changePrimaryWeapon() {
+        this.weapons.splice(0, 0, this.weapons.splice(1, 1)[0])
+        return this.weapons;
+    },
+
+    changeFirstWeaponToLastWeapon() {
+        this.weapons.push(this.weapons.splice(0,1)[0])
+        this.changePrimaryWeapon();
+        return this.weapons;
+    }
 }
 
-console.log(aphelios);
+console.log(aphelios.changeFirstWeaponToLastWeapon());
