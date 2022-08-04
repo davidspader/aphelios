@@ -1,10 +1,10 @@
 aphelios = {
     weapons: [
-        ['calibrum'], 
-        ['severum'], 
-        ['gravitum'], 
-        ['infernum'], 
-        ['crescendum'], 
+        ['calibrum', 50], 
+        ['severum', 50], 
+        ['gravitum', 50], 
+        ['infernum', 50], 
+        ['crescendum', 50], 
     ],
 
     getWeaponsQueue() {
@@ -21,8 +21,21 @@ aphelios = {
 
     changeFirstWeaponToLastWeapon() {
         this.weapons.push(this.weapons.splice(0,1)[0])
+        this.weapons[4][1] = 50;
         this.changePrimaryWeapon();
+    },
+
+    ShootSpellCasting() {
+        this.weapons[0][1] -= 10;
+        if(this.weapons[0][1] <= 0){
+            this.changeFirstWeaponToLastWeapon();
+        }
+    },
+    
+    shootBasicAttack() {
+        this.weapons[0][1] --;
+        if(this.weapons[0][1] <= 0){
+            this.changeFirstWeaponToLastWeapon();
+        }
     }
 }
-
-console.log(aphelios.getWeaponsQueue())
