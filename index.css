@@ -1,0 +1,7 @@
+.disable-weapon, .secondary-weapon {
+    width: 32px;
+}
+
+.disable-weapon {
+    opacity: 0.5;
+}
