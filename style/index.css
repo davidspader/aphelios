@@ -1,7 +1,35 @@
+.primary-weapon {
+    width: 128px;
+}
+
 .disable-weapon, .secondary-weapon {
-    width: 32px;
+    width: 64px;
 }
 
 .disable-weapon {
     opacity: 0.5;
+}
+
+.bg-aphelios {
+    background-color: #1A273A;
+}
+
+.title {
+    color: #534B7E;
+}
+
+#ammo {
+    color: #88A9D6;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.btn-aphelios {
+    background-color: #534B7E;
+    color: #fff;
+    border-color: #88A9D6;
+}
+
+.btn-aphelios:hover {
+    background-color: #332E56;
 }

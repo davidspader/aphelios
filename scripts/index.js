@@ -29,6 +29,7 @@ function loadQueue() {
     weapons.innerHTML = '';
 
     const ammo = document.createElement("span");
+    ammo.id = 'ammo';
     ammo.innerHTML = queue[0][1]; 
     weapons.appendChild(ammo);
 
